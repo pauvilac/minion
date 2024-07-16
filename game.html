@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minion Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="minion.png" alt="Minion" class="header-image">
+        <h1>Minion Joc</h1>
+        <div id="question-container">
+            <strong><div id="question">Pregunta</div></strong>
+            <div id="answer-buttons" class="btn-container">
+                <!-- Botones de respuesta se generarán aquí -->
+            </div>
+        </div>
+        <button id="next-btn" class="btn hidden">Següent</button>
+        <div id="score-container" class="">
+            <h2>Punts:</h2>
+            <p id="score"></p>
+            <p>Respostes correctes: <span id="correct-count">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

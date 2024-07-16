@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Juego</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="minion.png" alt="Minion" class="header-image">
+        <h1>Com es demana?</h1>
+        <p style="font-style:italic; font-size: .9rem; margin-bottom: 10px;">Ja saps com demanem les coses a casa... si vols entrar al joc, hauràs de demanar-ho com cal. Si més no, hi ha dos paraules clau...</p>
+        <form id="login-form">
+            <input type="text" id="password" class="input-field" placeholder="Introdueix la contrassenya">
+            <button type="submit" class="btn">Proba d'entrar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            if (password.includes("puto amo")) {
+                window.location.href = 'game.html';
+            } else {
+                alert("contrassenya incorrecta");
+            }
+        });
+    </script>
+</body>
+</html>

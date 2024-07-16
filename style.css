@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #E0E5EC; /* Fondo de neomorfismo */
+}
+
+.container {
+    text-align: center;
+    background: #E0E5EC; /* Fondo del contenedor */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px #BDBDBD, -8px -8px 15px #FFFFFF;
+    max-width: 320px;
+    width: 100%;
+}
+
+.header-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: #E0E5EC; /* Fondo de los botones */
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px #BDBDBD, -4px -4px 10px #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #D1D9E6; /* Fondo de los botones al pasar el mouse */
+}
+
+.btn:disabled {
+    cursor: default;
+}
+
+.correct {
+    background-color: #8FD694 !important; /* Verde para las respuestas correctas */
+    color: white;
+    box-shadow: inset 4px 4px 10px #6CA975, inset -4px -4px 10px #A4FFA9;
+}
+
+.incorrect {
+    background-color: #E57373 !important; /* Rojo para las respuestas incorrectas */
+    color: white;
+    box-shadow: inset 4px 4px 10px #B25B5B, inset -4px -4px 10px #FF9494;
+}
+
+.hidden {
+    display: none;
+}
+
+#score-container, #correct-counter {
+    margin-top: 20px;
+    background: #E0E5EC; /* Fondo del contenedor de puntuación */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 15px #BDBDBD, -8px -8px 15px #FFFFFF;
+}
+
+#score {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+}
+
+.input-field {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 10px #BDBDBD, inset -4px -4px 10px #FFFFFF;
+    font-size: 16px;
+}
