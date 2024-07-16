@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('next-btn');
     const scoreContainer = document.getElementById('score-container');
     const scoreElement = document.getElementById('score');
-    const restartButton = document.getElementById('restart-btn');
     const correctCounter = document.getElementById('correct-counter');
     const correctCountElement = document.getElementById('correct-count');
+    const endGame = document.getElementById('end-game');
 
     let questions = [];
     let currentQuestionIndex = 0;
@@ -30,16 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    restartButton.addEventListener('click', () => {
-        score = 0;
-        currentQuestionIndex = 0;
-        scoreContainer.classList.add('hidden');
-        questionContainer.classList.remove('hidden');
-        nextButton.classList.remove('hidden');
-        correctCounter.classList.remove('hidden');
-        correctCountElement.innerText = score;
-        setNextQuestion();
-    });
+    
 
     function setNextQuestion() {
         resetState();
@@ -84,11 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showScore() {
         questionContainer.classList.add('hidden');
+        endGame.classList.remove('hidden');
         scoreContainer.classList.remove('hidden');
         nextButton.classList.add('hidden');
         correctCounter.classList.add('hidden');
         scoreElement.innerText = `${score} de ${questions.length}`;
     }
 
+    function showResult() {
+        const scorea = score;
+        // Guardamos la puntuación en el localStorage
+        localStorage.setItem('score', scorea);
+        // Redirigimos a result.html con el parámetro de intentos disponibles
+        window.location.href = `result.html?tries=${scorea}`;
+    }
+    
+    endGame.addEventListener('click', () => {
+        showResult();
+    });
+
     setNextQuestion();
 });
+

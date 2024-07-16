@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="minion.png" alt="Minion" class="header-image">
+        <h1>Resultat</h1>
+        <p style="font-style: italic;">Bé peke, passarem una nit d'hotel a una comarca escollida aleatòriament però pots generar-ne tantes com encerts hagis fet ^^</p>
+        <div id="comarca-container">
+            <p style="font-size: 1.5rem; font-weight: bold; padding: 10px;" id="comarca">Comarca:</p>
+        </div>
+        <button id="generate-btn" class="btn">Una altra comarca</button>
+        <p id="remaining-tries">Intents restants: <span id="tries-count">0</span></p>
+    </div>
+    <script>
+        const comarcas = [
+            "Alt Camp", "Alt Empordà", "Alt Penedès", "Alt Urgell", "Alta Ribagorça",
+            "Anoia", "Bages", "Baix Camp", "Baix Ebre", "Baix Empordà",
+            "Baix Llobregat", "Baix Penedès", "Barcelonès", "Berguedà", "Cerdanya",
+            "Conca de Barberà", "Garraf", "Garrigues", "Garrotxa", "Gironès",
+            "Maresme", "Moianès", "Montsià", "Noguera", "Osona",
+            "Pallars Jussà", "Pallars Sobirà", "Pla d'Urgell", "Pla de l'Estany", "Priorat",
+            "Ribera d'Ebre", "Ripollès", "Segarra", "Segrià", "Selva",
+            "Solsonès", "Tarragonès", "Terra Alta", "Urgell", "Vallès Occidental",
+            "Vallès Oriental", "Vall d'Aran"
+        ];
+
+        // Obtener el parámetro de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let tries = parseInt(urlParams.get('tries'), 10);
+
+        document.getElementById('tries-count').textContent = tries;
+
+        function generateComarca() {
+            if (tries > 0) {
+                const randomIndex = Math.floor(Math.random() * comarcas.length);
+                document.getElementById('comarca').textContent = comarcas[randomIndex];
+                --tries;
+                document.getElementById('tries-count').textContent = tries;
+            } else {
+                alert('No te quedan más intentos.');
+            }
+        }
+
+        document.getElementById('generate-btn').addEventListener('click', generateComarca);
+
+        // Generar una comarca inicial al cargar la página
+        generateComarca();
+    </script>
+</body>
+</html>
